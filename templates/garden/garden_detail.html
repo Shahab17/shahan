@@ -1,0 +1,121 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+<h1 class="mt-5">
+     اطلاعات کامل
+</h1>
+<section class="mt-5">
+    <!--################3 For Rent ###################-->
+    {% if object.kind == 1 %}
+    <div class="row text-center w-100 border border-1 mx-auto">
+        <div class="col-5 my-2">
+            <p style="font-size:large;">
+                <b>باغ:</b> {{ object.garden }}
+            </p>
+            <p style="font-size:large;">
+                <b>سال:</b> {{ object.year }}
+            </p>
+            <p style="font-size:large;">
+                <b>متراژ:</b> {{ object.area }}
+            </p>
+            <p style="font-size:large;">
+                <b>آدرس:</b> {{ object.address }}
+            </p>
+        </div>
+       <div class="col-5 my-2">
+            <p style="font-size:large;">
+                <b>اجاره:</b> {{ object.rent_price }} میلیون تومان
+            </p>
+            <p style="font-size:large;">
+                <b>مسئول:</b> {{ object.person }}
+            </p>
+            <p style="font-size:large;">
+                <b>معامله شده:</b> {% if object.status %} بله {% else %} خیر {% endif %}
+            </p>
+       </div>    
+    </div>
+    <!--################3 For Sale ###################-->
+    {% elif object.kind == 2 %}
+    <div class="row text-center w-100 border border-1 mx-auto">
+        <div class="col-5 my-2">
+           <p style="font-size:large;">
+               <b>باغ:</b> {{ object.garden }}
+           </p>
+           <p style="font-size:large;">
+               <b>سال:</b> {{ object.year }}
+           </p>
+           <p style="font-size:large;">
+               <b>متراژ:</b> {{ object.area }}
+           </p>
+           <p style="font-size:large;">
+               <b>آدرس:</b> {{ object.address }}
+           </p>
+        </div>
+        <div class="col-5 my-2">
+           <p style="font-size:large;">
+               <b>وضعیت سند:</b> {% if  object.document == 1 %} آماده {% elif  object.document == 2 %} در رهن {% else %} آماده نیست {% endif %}
+           </p>
+            <p style="font-size:large;">
+                <b>قیمت:</b> {{ object.sale_price }} میلیون تومان
+            </p>
+            <p style="font-size:large;">
+                <b>مسئول:</b> {{ object.person }}
+            </p>
+            <p style="font-size:large;">
+                <b>معامله شده:</b> {% if object.status %} بله {% else %} خیر {% endif %}
+            </p>
+        </div>
+    </div>
+    <!--################3 For Exchange ###################-->
+    {% else %}
+    <div class="row text-center w-100 border border-1 mx-auto">
+        <div class="col-5 my-2">
+           <p style="font-size:large;">
+               <b>باغ:</b> {{ object.garden }}
+           </p>
+           <p style="font-size:large;">
+               <b>سال:</b> {{ object.year }}
+           </p>
+           <p style="font-size:large;">
+               <b>متراژ:</b> {{ object.area }}
+           </p>
+           <p style="font-size:large;">
+               <b>آدرس:</b> {{ object.address }}
+           </p>
+        </div>
+        <div class="col-5 my-2">
+            <p style="font-size:large;">
+                <b>وضعیت سند:</b> {% if  object.document == 1 %} آماده {% elif  object.document == 2 %} در رهن {% else %} آماده نیست {% endif %}
+            </p>
+            <p style="font-size:large;">
+                <b>مسئول:</b> {{ object.person }}
+            </p>
+            <p style="font-size:large;">
+                <b>معامله شده:</b>  {% if object.status %} بله {% else %} خیر {% endif %}
+            </p>
+        </div>
+    </div>
+    {% endif %}
+</section>
+<section class="my-4">
+    <div class="text-center w-100 mx-auto">
+    {% if object.kind == 1 %}
+    <a href="{% url 'garden_rent' %}" class="btn btn-lg btn-success">برگشت</a>
+    {% elif object.kind == 2 %}
+    <a href="{% url 'garden_sale' %}" class="btn btn-lg btn-success">برگشت</a>
+    {% else %}
+    <a href="{% url 'garden_exchange' %}" class="btn btn-lg btn-success">برگشت</a>
+    {% endif %}
+    <a href="{% url 'garden_update' object.id %}" class="btn btn-lg btn-warning">ویرایش</a>
+    {% if object.kind == 1 %}
+    <a href="{% url 'garden_delete_rent' object.id %}" class="btn btn-lg btn-danger">حذف</a>
+    {% elif object.kind == 2 %}
+    <a href="{% url 'garden_delete_sale' object.id %}" class="btn btn-lg btn-danger">حذف</a>
+    {% else %}
+    <a href="{% url 'garden_delete_exchange' object.id %}" class="btn btn-lg btn-danger">حذف</a>
+    {% endif %}
+    
+    </div>
+</section>
+{% endblock %}

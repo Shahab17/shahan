@@ -1,0 +1,21 @@
+{% extends 'home/base.html' %}
+
+
+{% block content %}
+
+<section class="row my-5">
+    <form method="POST" class="col-8 col-lg-4"> {% csrf_token %}
+        {{ form.as_p}}
+
+        <input type="submit" class="btn btn-lg btn-primary" value="ایجاد و ذخیره" />
+        {% if object.kind == 1 %}
+        <a href="{% url 'garden_rent' %}" class="btn btn-lg btn-success">برگشت</a>
+        {% elif object.kind == 2 %}
+        <a href="{% url 'garden_sale' %}" class="btn btn-lg btn-success">برگشت</a>
+        {% else %}
+        <a href="{% url 'garden_exchange' %}" class="btn btn-lg btn-success">برگشت</a>
+        {% endif %}
+    </form>
+</section>
+
+{% endblock %}

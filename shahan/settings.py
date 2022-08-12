@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     #myApps
     'home',
     'apartment',
+    'house',
+    'store',
+    'garden',
+    'field'
 ]
 
 MIDDLEWARE = [

@@ -21,9 +21,23 @@
             <h5 class="card-title">منزل</h5>
             <p class="card-text">برای دیدن لیست منازل موجود جهت اجاره، خرید و یا معاوضه بر روی دکمه مورد نظر خود کلیک نمایید.</p>
             <p class="mx-auto text-center">
-                <a style="font-size:1.5rem;" href="" class="my-1 btn btn-primary">فروش</a>
-                <a style="font-size:1.5rem;" href="{% url 'apartment_rent' %}" class="my-1 btn btn-primary">اجاره</a>
-                <a style="font-size:1.5rem;" href="" class="my-1 btn btn-primary">معاوضه</a>
+                <a style="font-size:1.5rem;" href="{% url 'house_sale' %}" class="my-1 btn btn-primary">فروش</a>
+                <a style="font-size:1.5rem;" href="{% url 'house_rent' %}" class="my-1 btn btn-primary">اجاره</a>
+                <a style="font-size:1.5rem;" href="{% url 'house_exchange' %}" class="my-1 btn btn-primary">معاوضه</a>
+            </p>
+        </div>
+    </div>
+    
+    
+    <div class="card mb-3 col-5 g-2">
+        <img src="{% static 'images/store-1.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">مغازه</h5>
+            <p class="card-text">برای دیدن لیست مغازه‌های موجود جهت اجاره، خرید و یا معاوضه بر روی دکمه مورد نظر خود کلیک نمایید.</p>
+            <p class="mx-auto text-center">
+                <a style="font-size:1.5rem;" href="{% url 'store_sale' %}" class="my-1 btn btn-primary">فروش</a>
+                <a style="font-size:1.5rem;" href="{% url 'store_rent' %}" class="my-1 btn btn-primary">اجاره</a>
+                <a style="font-size:1.5rem;" href="{% url 'store_exchange' %}" class="my-1 btn btn-primary">معاوضه</a>
             </p>
         </div>
     </div>
@@ -34,25 +48,13 @@
             <h5 class="card-title">باغ</h5>
             <p class="card-text">برای دیدن لیست باغ‌های موجود جهت اجاره، خرید و یا معاوضه بر روی دکمه مورد نظر خود کلیک نمایید.</p>
             <p class="mx-auto text-center">
-                <a style="font-size:1.5rem;" href="" class="my-1 btn btn-primary">فروش</a>
-                <a style="font-size:1.5rem;" href="{% url 'apartment_rent' %}" class="my-1 btn btn-primary">اجاره</a>
-                <a style="font-size:1.5rem;" href="" class="my-1 btn btn-primary">معاوضه</a>
+                <a style="font-size:1.5rem;" href="{% url 'garden_sale' %}" class="my-1 btn btn-primary">فروش</a>
+                <a style="font-size:1.5rem;" href="{% url 'garden_rent' %}" class="my-1 btn btn-primary">اجاره</a>
+                <a style="font-size:1.5rem;" href="{% url 'garden_exchange' %}" class="my-1 btn btn-primary">معاوضه</a>
             </p>
         </div>
     </div>
-    
-    <div class="card mb-3 col-5 g-2">
-        <img src="{% static 'images/store-1.jpg' %}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">مغازه</h5>
-            <p class="card-text">برای دیدن لیست مغازه‌های موجود جهت اجاره، خرید و یا معاوضه بر روی دکمه مورد نظر خود کلیک نمایید.</p>
-            <p class="mx-auto text-center">
-                <a style="font-size:1.5rem;" href="" class="my-1 btn btn-primary">فروش</a>
-                <a style="font-size:1.5rem;" href="{% url 'apartment_rent' %}" class="my-1 btn btn-primary">اجاره</a>
-                <a style="font-size:1.5rem;" href="" class="my-1 btn btn-primary">معاوضه</a>
-            </p>
-        </div>
-    </div>
+
     
     <div class="card mb-3 col-5 g-2">
         <img src="{% static 'images/field-1.jpg' %}" class="card-img-top" alt="...">
@@ -60,9 +62,9 @@
             <h5 class="card-title">زمین</h5>
             <p class="card-text">برای دیدن لیست زمین‌های موجود جهت اجاره، خرید و یا معاوضه بر روی دکمه مورد نظر خود کلیک نمایید.</p>
             <p class="mx-auto text-center">
-                <a style="font-size:1.5rem;" href="" class="my-1 btn btn-primary">فروش</a>
-                <a style="font-size:1.5rem;" href="{% url 'apartment_rent' %}" class="my-1 btn btn-primary">اجاره</a>
-                <a style="font-size:1.5rem;" href="" class="my-1 btn btn-primary">معاوضه</a>
+                <a style="font-size:1.5rem;" href="{% url 'field_sale' %}" class="my-1 btn btn-primary">فروش</a>
+                <a style="font-size:1.5rem;" href="{% url 'field_rent' %}" class="my-1 btn btn-primary">اجاره</a>
+                <a style="font-size:1.5rem;" href="{% url 'field_exchange' %}" class="my-1 btn btn-primary">معاوضه</a>
             </p>
         </div>
     </div>

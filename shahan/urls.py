@@ -28,6 +28,10 @@ urlpatterns = [
     path('contact-us/', contact_us, name='contact-us'),
 
     path('apartment/', include('apartment.urls')),
+    path('house/', include('house.urls')),
+    path('store/', include('store.urls')),
+    path('garden/', include('garden.urls')),
+    path('field/', include('field.urls')),
 
     path('admin/', admin.site.urls),
 ]
