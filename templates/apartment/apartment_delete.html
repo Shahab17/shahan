@@ -1,0 +1,109 @@
+{% extends 'home/base.html' %}
+
+
+{% block content %}
+<section class="my-5">
+    {% if object.kind == 1 %}
+    <div class="row text-center w-100 border border-1 mx-auto">
+        <div class="col-5 my-2">
+            <p style="font-size:large;">
+                <b>آدرس:</b> {{ object.address }}
+            </p>
+            <p style="font-size:large;">
+                <b>متراژ:</b> {{ object.area }}
+            </p>
+            <p style="font-size:large;">
+                <b>سال ساخت:</b> {{ object.year }}
+            </p>
+            <p style="font-size:large;">
+                <b>رهن:</b> {{ object.rent_price1 }} میلیون تومان
+            </p>
+        </div>
+       <div class="col-5 my-2">
+            <p style="font-size:large;">
+                <b>اجاره:</b> {{ object.rent_price2 }} میلیون تومان
+            </p>
+            <p style="font-size:large;">
+                <b>مسئول:</b> {{ object.person }}
+            </p>
+            <p style="font-size:large;">
+                <b>معامله شده:</b> {% if object.status %} بله {% else %} خیر {% endif %}
+            </p>
+       </div>    
+    </div>
+     <!--################3 For Sale ###################-->
+     {% elif object.kind == 2 %}
+     <div class="row text-center w-100 border border-1 mx-auto">
+         <div class="col-5 my-2">
+             <p style="font-size:large;">
+                 <b>آدرس:</b> {{ object.address }}
+             </p>
+             <p style="font-size:large;">
+                 <b>متراژ:</b> {{ object.area }}
+             </p>
+             <p style="font-size:large;">
+                 <b>سال ساخت:</b> {{ object.year }}
+             </p>
+             <p style="font-size:large;">
+                 <b>وضعیت سند:</b> {% if  object.document == 1 %} آماده {% elif  object.document == 2 %} در رهن {% else %} آماده نیست {% endif %}
+             </p>
+         </div>
+         <div class="col-5 my-2">
+             <p style="font-size:large;">
+                 <b>قیمت:</b> {{ object.sale_price }} میلیون تومان
+             </p>
+             <p style="font-size:large;">
+                 <b>مسئول:</b> {{ object.person }}
+             </p>
+             <p style="font-size:large;">
+                 <b>معامله شده:</b> {% if object.status %} بله {% else %} خیر {% endif %}
+             </p>
+         </div>
+     </div>
+ 
+     <!--################3 For Exchange ###################-->
+     {% else %}
+     <div class="row text-center w-100 border border-1 mx-auto">
+         <div class="col-5 my-2">
+             <p style="font-size:large;">
+                 <b>آدرس:</b> {{ object.address }}
+             </p>
+             <p style="font-size:large;">
+                 <b>متراژ:</b> {{ object.area }}
+             </p>
+             <p style="font-size:large;">
+                 <b>سال ساخت:</b> {{ object.year }}
+             </p>
+         </div>
+         <div class="col-5 my-2">
+             <p style="font-size:large;">
+                 <b>وضعیت سند:</b> {% if  object.document == 1 %} آماده {% elif  object.document == 2 %} در رهن {% else %} آماده نیست {% endif %}
+             </p>
+             <p style="font-size:large;">
+                 <b>مسئول:</b> {{ object.person }}
+             </p>
+             <p style="font-size:large;">
+                 <b>معامله شده:</b>  {% if object.status %} بله {% else %} خیر {% endif %}
+             </p>
+         </div>
+     </div>
+     {% endif %}
+    <p style="font-size:x-large; font-weight: bolder;" class="my-3">آیا مطمئن هستید که مورد انتخاب شده حذف شود؟</p>
+    <form method="POST"> {% csrf_token %}
+        <div class="text-center w-100 mx-auto">
+            <input type="submit" value="بله" class="btn btn-danger btn-lg col-5 col-lg-2" /> 
+           
+            {% if object.kind == 1 %}
+            <a class="btn btn-secondary btn-lg col-5 col-lg-2" href="{% url 'apartment_rent' %}">خیر</a>
+            {% elif object.kind == 2 %}
+            <a class="btn btn-secondary btn-lg col-5 col-lg-2" href="{% url 'apartment_sale' %}">خیر</a>
+            {% else %}
+            <a class="btn btn-secondary btn-lg col-5 col-lg-2" href="{% url 'apartment_exchange' %}">خیر</a>
+            {% endif %}
+        </div>
+        
+    </form>
+</section>
+
+
+{% endblock %}

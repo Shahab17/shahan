@@ -1,0 +1,60 @@
+/* ###################### @fonta-face ######################### */
+
+@font-face {
+    font-family: 'B Nazanin';
+    src: url(../fonts/B-NAZANIN.ttf);
+}
+
+/* ############### article, p, footer ######################### */
+
+body{
+    font-family: "B Nazanin";
+}
+
+/* ################## Headings ######################### */
+
+h1 {
+    font-family: "B Nazanin";
+    font-size: 2.25rem;
+    font-weight: bolder;
+}
+h2 {
+    font-family: "B Nazanin";
+    font-size: 2.125rem;
+    font-weight: bold;
+}
+h3 {
+    font-family: "B Nazanin";
+    font-size: 2rem;
+    font-weight: bold;
+}
+h4 {
+    font-family: "B Nazanin";
+    font-size: 1.875rem;
+    font-weight: bold;
+}
+h5 {
+    font-family: "B Nazanin";
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+h6 {
+  font-family: "B Nazanin";
+  font-size: 1.625rem;
+  font-weight: bold;
+}
+h1 span, h2 span, h3 span, h4 span, h5 span , h6 span {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 0.9em;
+}
+
+.navig {
+    font-family: "B Nazanin";
+    font-size: 1rem;
+    font-weight: bold;
+  }
+.navig span{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    font-weight: 500;
+}   
