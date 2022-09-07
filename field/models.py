@@ -30,7 +30,7 @@ class Field(models.Model):
     rent_price2 = models.IntegerField(verbose_name='اجاره', null=True, blank=True)
     person = models.CharField(max_length=200, verbose_name='مسئول')
     kind = models.IntegerField(verbose_name='مورد جهت', choices = KIND, default=1)
-
+    number = models.IntegerField(verbose_name='قطعه شماره', default=1)
     status = models.IntegerField(verbose_name='معامله شده', choices = STATUS, default=0)
     
     created_on = models.DateTimeField(auto_now_add=True, verbose_name='نوشته شده')
